@@ -18,6 +18,9 @@ spec:
     spec:
       containers:
       - image: cantu1090/events-website:v1.0
-        name: events-api
+        name: events-web
         ports:
-        - containerPort: 8082
+        - containerPort: 8080
+        env:
+        - name: SERVER
+          value: "http://events-api-svc:8082"
